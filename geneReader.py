@@ -1,3 +1,5 @@
+# For reading FastA files
+
 def geneReader ( filename ) :
     
     genome = ''
