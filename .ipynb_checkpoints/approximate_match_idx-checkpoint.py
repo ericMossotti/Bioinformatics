@@ -14,7 +14,7 @@ def approximate_match_idx ( p, t, n ) : # approximate match functin but with ind
     
     all_matches = set ( )
     
-    p_idx = Index ( t, segment_length ) # pattern indexing of the file by 8-mers
+    p_idx = Index ( t, segment_length ) # pattern indexing of the file by x-mers
     
     idx_hits = 0 # index hits
     
@@ -68,6 +68,8 @@ def approximate_match_idx ( p, t, n ) : # approximate match functin but with ind
         # 'end' begins at 24 while 'start' begins at 0. 
         
         matches = p_idx.query ( p [ start : end ] )
+        
+        
                             
         idx_hits += len ( matches )
 
@@ -103,4 +105,4 @@ def approximate_match_idx ( p, t, n ) : # approximate match functin but with ind
                 
                 all_matches.add ( m - start ) 
                 
-    return list (all_matches), idx_hits
+    return idx_hits

@@ -1,4 +1,4 @@
-from kmer_index import Index
+#from kmer_index import Index
 
 from bm_preproc import BoyerMoore
 
