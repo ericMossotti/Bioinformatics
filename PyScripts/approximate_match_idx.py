@@ -1,4 +1,4 @@
-from kmer_index import Index
+from PyScripts.kmer_index import Index
 
 def approximate_match_idx ( p, t, n ) : # approximate match functin but with indexing
     
@@ -68,8 +68,6 @@ def approximate_match_idx ( p, t, n ) : # approximate match functin but with ind
         # 'end' begins at 24 while 'start' begins at 0. 
         
         matches = p_idx.query ( p [ start : end ] )
-        
-        
                             
         idx_hits += len ( matches )
 

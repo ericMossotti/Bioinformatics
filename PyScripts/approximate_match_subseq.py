@@ -1,4 +1,4 @@
-from SubseqIndex import SubseqIndex
+from PyScripts.subSequenceIdx import SubSeqIndex
 
 def approximate_match_subseq ( p, t, n, ival ) :
     
@@ -15,15 +15,21 @@ def approximate_match_subseq ( p, t, n, ival ) :
 
     all_matches = set ( )
 
-    p_subs = SubseqIndex ( t, segment_length, ival ) # pattern indexing of the file by x-mers
+    # pattern indexing of the file by x-mers
+    
+    p_subs = SubSeqIndex ( t, segment_length, ival ) 
 
     sub_hits = 0 # subseq hits
 
-    # The range from 0 to number of errors allowed + 1 to account for len starting at 1 instead of 0, like range.
+    # The range from 0 to number of errors allowed + 1 to account for len
+    #
+    # starting at 1 instead of 0, like range.
 
     for i in range ( n + 1 ) :
 
-        # 'start' is the iterator value times the segment length, so we iterate by 8, aka, 8-mers in this context.
+        # 'start' is the iterator value times the segment length, so we iterate
+        #
+        # by 8, aka, 8-mers in this context.
         #
         # i = 0, then start = 0 * 8 = 0
         #
@@ -34,44 +40,10 @@ def approximate_match_subseq ( p, t, n, ival ) :
         # ... = 24
         #
         # ...
-
-        #start = i * segment_length
         
         start = i
-        
-        # 'end' is the smallest returnable value, which is the length of the pattern 'p'.
-        ##
-        # i = 0, then i + 1 * segment_length
-        #
-        # 0 + 1 = 1 + 24 = 25, 
-        #
-        # but the lowest value is the 'key' in the min () function, which is 24
-        #
-        # so end = 24 where i = 0. 
-        ##
-        # for i = 1, 
-        #
-        # end = minimum of ( 2 * 24, > 24 ) 
-        #
-        # end = 48, so the 'key' rule for lowest acceptable value is not required from i = 1 and on. 
-        ##
-        # for i = 2,
-        #
-        # end = min ( 3 * 24 ) = 72
-        #
-        # end = 72
-
-        # end = min ( ( i + 1 ) * segment_length, len ( p ) ) 
-
-        # 'matches' processes our pattern, likewise, by 8, so will start at the length 0 and 
-        #
-        # So we are going in chunks of 24, which is the length of the pattern.
-        #
-        # 'end' begins at 24 while 'start' begins at 0. 
 
         matches = p_subs.query ( p [ start : ] )
-
-        #sub_hits += len ( matches )
          
         for m in matches : 
             
@@ -83,9 +55,6 @@ def approximate_match_subseq ( p, t, n, ival ) :
 
             mismatches = 0
             
-            
-            
-            
             for j in range ( 0, len ( p ) ) :
 
                 if not p [ j ] == t [ m - start + j ] :
@@ -95,26 +64,6 @@ def approximate_match_subseq ( p, t, n, ival ) :
                     if mismatches >= n :
 
                         break
-
-           # for j in range ( 0, start ) :
-           #
-           #     if not p [ j ] == t [ m - start + j ] :
-           #
-           #         mismatches += 1
-           #
-           #        if mismatches >= n :
-           #
-           #           break
-
-          #  for j in range ( end, len ( p ) ) :
-#
- #               if not p [ j ] == t [ m - start + j ] :
-#
- #                   mismatches += 1
-#
- #                   if mismatches > n :
-#
- #                       break
 
             if mismatches <= n :
 
