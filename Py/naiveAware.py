@@ -1,11 +1,9 @@
-from reverseComplement import reverseComplement
+from Py.reverseComplement import reverseComplement
 
 def naiveAware ( p, t ) :
     
     occurrences = []
-    
-    rc_t = reverseComplement ( t )
-    
+        
     rc_p = reverseComplement ( p )
     
     # Range is the length of the strand minus the length of the pattern, 

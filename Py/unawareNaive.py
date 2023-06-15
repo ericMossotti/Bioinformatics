@@ -17,7 +17,7 @@ def unawareNaive ( p, t ) :
                 
                 break
                 
-        if match:
+        if match :
             
             occurrences.append ( i )  # all chars matched; record
             

@@ -6,7 +6,7 @@ Created on Tue Jun  6 10:57:52 2023
 
 from itertools import permutations
 
-from PyScripts.overlap import overlap
+from Py.overlap import overlap
 
 
 def naive_overlap_map ( reads, k ) :

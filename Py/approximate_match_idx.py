@@ -1,4 +1,4 @@
-from PyScripts.kmer_index import Index
+from Py.kmer_index import Index
 
 def approximate_match_idx ( p, t, n ) : # approximate match functin but with indexing
     

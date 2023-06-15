@@ -1,6 +1,8 @@
-from PyScripts.bm_preproc import BoyerMoore
+from Py.bm_preproc import BoyerMoore
 
-from PyScripts.boyer_moore import boyer_moore
+from Py.boyer_moore import boyer_moore
+
+
 
 def approximate_match ( p, t, n ) :
     

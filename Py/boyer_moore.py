@@ -8,7 +8,7 @@ def boyer_moore ( p, p_bm, t ) :
     
     occurrences = [ ]
     
-    while i < len(t) - len(p) + 1:
+    while i < len ( t ) - len ( p ) + 1:
         
         shift = 1
         

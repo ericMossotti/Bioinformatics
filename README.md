@@ -4,4 +4,7 @@ I have taken several college dealing with genetics a few years ago, but now I'm 
 ## Why Have a Repo? 
 I have Anaconda Navigator installed and do work on my laptop and desktop, so using version control with JupyterLab to push / pull changes enables me to keep everything I'm working on together. I'm finding Spyder, as a Python IDE, helpful for editing and testing the files and code. JupyterLab has better version control plugins than Spyder right now. So, I only use Spyder for editing and testing code. JupyterLab and Spyder came preinstalled (I think?) with Anaconda Navigator. 
 
+##
 
+How to edit notebooks with Spyder IDE:
+https://docs.spyder-ide.org/current/plugins/notebook.html 

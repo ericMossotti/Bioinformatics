@@ -29,7 +29,7 @@ def overlap ( a, b, min_length = 3 ) :
         
         # found occurrence; check for full suffix/prefix match
         # startswith() returns a logical value, in this case, 
-        # checks if beginning of string 'a' matches suffix of string 'b'
+        # checks if the beginning of string 'a' matches the suffix of string 'b'
         
         
         if b.startswith ( a [ start : ] ) :

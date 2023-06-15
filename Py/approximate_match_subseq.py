@@ -1,4 +1,4 @@
-from PyScripts.subSequenceIdx import SubSeqIndex
+from Py.subSequenceIdx import SubSeqIndex
 
 def approximate_match_subseq ( p, t, n, ival ) :
     
