@@ -4,21 +4,31 @@ Created on Fri Jun  2 14:16:16 2023
 
 """
 
+import numpy as np
+
+
 def editDistance ( x, y ) :
     
     # Setting an empty matrix.
     
     D = [ ]
+    D1 = [ ]
     
     # Range covers the offset row plus the length of the pattern
     
     for i in range ( len ( x ) + 1 ) :
         
-        # Initializes the offset or first row of the matrix with 0's. 
+        # Initializes the dimensions of the matrix with 0s. 
         
         D.append ( [ 0 ] * ( len ( y ) + 1 ) )
         
-        """ """
+    D1 = D
+    
+    zeroMatrix = np.matrix ( D )
+
+    zeroMatrix = zeroMatrix.view ( ) 
+    
+   # print ( '2d matrix with 0s: ' % zeroMatrix ) # for a clean view of the matrix
         
     # Initializes first row and column of the matrix
     
@@ -62,5 +72,5 @@ def editDistance ( x, y ) :
         
     # Edit distance is the value in the bottom right corner of the matrix, D.
     
-    return D
+    return D, D1, zeroMatrix
     #return D [ -1 ] [ -1 ]

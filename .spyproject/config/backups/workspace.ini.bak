@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['README.md', 'Py\\overlap.py', 'Py\\naive_overlap_map.py', 'notes.ipynb', 'bm_naive_counts.ipynb', 'Py\\editDistance.py', 'Py\\geneReader.py', 'Py\\globalAlignment.py', 'Overlaps_myAnalysis.ipynb', 'PatternFrequency.ipynb', 'Py\\approximate_match.py']
+recent_files = ['README.md', 'Py\\overlap.py', 'Py\\naive_overlap_map.py', 'notes.ipynb', 'bm_naive_counts.ipynb', 'Py\\editDistance.py', 'Py\\geneReader.py', 'Py\\globalAlignment.py', 'Overlaps_myAnalysis.ipynb', 'PatternFrequency.ipynb', 'Py\\approximate_match.py', 'CountingK-mers.ipynb']
 
 [main]
 version = 0.2.0
