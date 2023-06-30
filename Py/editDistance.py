@@ -4,15 +4,11 @@ Created on Fri Jun  2 14:16:16 2023
 
 """
 
-import numpy as np
-
-
 def editDistance ( x, y ) :
     
-    # Setting an empty matrix.
+    # Setting an empty set, of which, will be our matrix.
     
     D = [ ]
-    D1 = [ ]
     
     # Range covers the offset row plus the length of the pattern
     
@@ -22,13 +18,6 @@ def editDistance ( x, y ) :
         
         D.append ( [ 0 ] * ( len ( y ) + 1 ) )
         
-    D1 = D
-    
-    zeroMatrix = np.matrix ( D )
-
-    zeroMatrix = zeroMatrix.view ( ) 
-    
-   # print ( '2d matrix with 0s: ' % zeroMatrix ) # for a clean view of the matrix
         
     # Initializes first row and column of the matrix
     
@@ -36,41 +25,59 @@ def editDistance ( x, y ) :
         
         D [ i ] [ 0 ] = i
         
+    # We will arbitrarily initialize the first row instead of column as 0's.
+    # Could have set first column as 0 instead as it doesn't matter.
+        
     for i in range ( len ( y ) + 1 ) :
         
-        D [ 0 ] [ i ] = i
+        D [ 0 ] [ i ] = 0
         
         
     # Fills in the rest of the matrix rows and columns.
     #
     # Starts at  row 1. 
     
-    for i in range ( 1, len ( x ) + 1 ) : # goes by row
+    for i in range ( 1, len ( x ) + 1 ) :
         
+        # goes by column, starts at column 1
         
-        for j in range ( 1, len ( y ) + 1 ) : # goes by column, starts at column 1
+        for j in range ( 1, len ( y ) + 1 ) : 
+        
+        # value that is left adjacent to the current value, 
+            # plus 1 is the penalty for character skipping
             
-            distHor = D [ i ] [ j - 1 ] + 1 # value that is left adjacent to the current value, plus 1 is the penalty for character skipping
+            distHor = D [ i ] [ j - 1 ] + 1 
             
-            distVer = D [ i - 1 ] [ j ] + 1 # value that is up adjacent to the current value, plus 1 is the penalty for character skipping
+            # value that is up adjacent to the current value, 
+                # plus 1 is the penalty for character skipping
             
-            if x [ i - 1 ] == y [ j - 1 ] : # edit distance does not further increase if there is a match
+            distVer = D [ i - 1 ] [ j ] + 1
+            
+            # edit distance does not further increase if there is a match
+            
+                # aka, if matches, does not incur penalty
                 
-                distDiag = D [ i - 1 ] [ j - 1 ] # diagonal distance from current values to the above-left adjacent value. 
+            if x [ i - 1 ] == y [ j - 1 ] : 
                 
-                # if matches, does not incur penalty
+                # Diagonal up/left distance
+                
+                distDiag = D [ i - 1 ] [ j - 1 ] 
                 
                 
+            # otherwise, diagonal distance value increases by 1
                 
             else :
                 
-                distDiag = D [ i - 1 ] [ j - 1 ] + 1 # otherwise diagonal distance value increases by 1
+                distDiag = D [ i - 1 ] [ j - 1 ] + 1 
                 
                 
-                
-            D [ i ] [ j ] = min ( distHor, distVer, distDiag ) # takes the minimum edit distance of the 3 possible values
+            # min () takes the minimum edit distance of the 3 possible values
+            # so this value will be inserted for the current iteration
+            # of row i, column j. 
+
+            D [ i ] [ j ] = min ( distHor, distVer, distDiag ) 
+            
         
-    # Edit distance is the value in the bottom right corner of the matrix, D.
+    # We are interested in the minimum value of the bottom row.
     
-    return D, D1, zeroMatrix
-    #return D [ -1 ] [ -1 ]
+    return min ( D [ -1 ] )

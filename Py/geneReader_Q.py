@@ -4,11 +4,12 @@
 
 def geneReader_Q ( filename ) :
     
-    genome = ''
     
     with open ( filename, 'r' ) as f :
                     
         lines = f.readlines ()
+        
+    # only lines 2 and 3 will be read, skip everything else.
             
     desireds = lines [ 1 : : 4 ]   
     
