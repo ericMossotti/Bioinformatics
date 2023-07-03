@@ -25,7 +25,7 @@ def globalAlignment ( x, y ) :
 
     # Initialize first row
     
-    for j in range ( 1,len ( y ) + 1 ) :
+    for j in range ( 1, len ( y ) + 1 ) :
         
         D [ 0 ] [ j ] = D [ 0 ] [ j - 1 ] + score [ -1 ] [ alphabet.index ( y [ j - 1 ] ) ]
 

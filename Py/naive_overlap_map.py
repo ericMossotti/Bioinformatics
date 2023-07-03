@@ -12,18 +12,25 @@ from Py.overlap import overlap
 def naive_overlap_map ( reads, k ) :
     
     
-    olaps = { }     # Initializing the set. 
+    olaps = { }     # Initializing the dictionary. 
     
     
     for a, b in permutations ( reads, 2 ) :
         
         '''
         
-        The number of consequtive characters from a and b that overlap. 
-        Minimum overlap length is specified. So we can go over but not under
-        that amount.
+        The number of consecutive characters from each pair of reads, a and b,
+        that overlap. 
+        
+        Minimum overlap length is specified. 
+        
+        So we can go over but not under that amount.
+        
+        The "2" means we are looking for "pairs" of reads.
         
         '''
+        
+        # Calculates the overlap length with the overlap () function.
         
         olen = overlap ( a, b, min_length = k )
         
@@ -38,7 +45,16 @@ def naive_overlap_map ( reads, k ) :
     
         if olen > 0 :
             
+            
+            
             olaps [ ( a, b ) ] = olen
+            
+            '''
+            
+            Adds the tuple, ( a, b ), to the dictionary as a key. Then it 
+            assigns to the tuple key, a numerical value, equal to olen.
+            
+            '''
             
             
     return olaps
