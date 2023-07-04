@@ -20,20 +20,15 @@ def naive_overlap_map ( reads, k ) :
         '''
         
         The number of consecutive characters from each pair of reads, a and b,
-        that overlap. 
-        
-        Minimum overlap length is specified. 
-        
-        So we can go over but not under that amount.
-        
-        The "2" means we are looking for "pairs" of reads.
+        that overlap. Minimum overlap length is specified. So we can go over 
+        but not under that amount. The "2" means we are looking at 
+        "pairs" of reads.
         
         '''
         
         # Calculates the overlap length with the overlap () function.
         
         olen = overlap ( a, b, min_length = k )
-        
         
         '''
         
@@ -42,19 +37,18 @@ def naive_overlap_map ( reads, k ) :
         olen.
         
         '''
+        
+        # a's length-k suffix, find all reads that have that suffix
     
         if olen > 0 :
-            
-            
             
             olaps [ ( a, b ) ] = olen
             
             '''
             
             Adds the tuple, ( a, b ), to the dictionary as a key. Then it 
-            assigns to the tuple key, a numerical value, equal to olen.
+            assigns to the tuple key a numerical value, olen.
             
             '''
-            
             
     return olaps
