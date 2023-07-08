@@ -38,7 +38,7 @@ def naive_overlap_map ( reads, k ) :
         
         '''
         
-        # a's length-k suffix, find all reads that have that suffix
+        # for a's length-k suffix, finds all reads with that suffix
     
         if olen > 0 :
             
