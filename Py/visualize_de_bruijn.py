@@ -2,7 +2,6 @@
 """
 Created on Sun Jul  9 15:51:16 2023
 
-@author: ecmos
 """
 
 from Py.de_bruijn_ize import de_bruijn_ize

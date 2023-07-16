@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['Py\\overlap.py', 'Py\\naiveAware.py', 'Py\\scs.py', 'Py\\pick_maximal_overlap.py', 'Py\\editDistance.py', 'Py\\naive_overlap_map.py', 'Py\\greedy_scs.py', 'Py\\de_bruijn_ize.py', 'Py\\visualize_de_bruijn.py', 'Overlaps_myAnalysis.ipynb']
+recent_files = ['Py\\overlap.py', 'Py\\naiveAware.py', 'Py\\scs.py', 'Py\\pick_maximal_overlap.py', 'Py\\editDistance.py', 'Py\\naive_overlap_map.py', 'Py\\greedy_scs.py', 'Py\\de_bruijn_ize.py', 'Py\\visualize_de_bruijn.py', 'Overlaps_myAnalysis.ipynb', 'notes.ipynb']
 
 [main]
 version = 0.2.0

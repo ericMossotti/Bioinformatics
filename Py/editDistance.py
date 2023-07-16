@@ -14,7 +14,8 @@ def editDistance ( x, y ) :
     
     for i in range ( len ( x ) + 1 ) :
         
-        # Initializes the dimensions of the matrix with 0s. 
+        # Initializes the dimensions of the matrix with 
+        # 0 values as placeholders. 
         
         D.append ( [ 0 ] * ( len ( y ) + 1 ) )
         
@@ -55,11 +56,11 @@ def editDistance ( x, y ) :
             
             # edit distance does not further increase if there is a match
             
-                # aka, if matches, does not incur penalty
+                # basically, if matches, does not incur penalty
                 
             if x [ i - 1 ] == y [ j - 1 ] : 
                 
-                # Diagonal up/left distance
+                # Diagonal up-left distance
                 
                 distDiag = D [ i - 1 ] [ j - 1 ] 
                 
@@ -71,9 +72,13 @@ def editDistance ( x, y ) :
                 distDiag = D [ i - 1 ] [ j - 1 ] + 1 
                 
                 
-            # min () takes the minimum edit distance of the 3 possible values
-            # so this value will be inserted for the current iteration
-            # of row i, column j. 
+            """
+            
+            min () takes the minimum edit distance of the 3 possible values
+            so this value will be inserted for the current iteration
+            of row i, column j. 
+            
+            """
 
             D [ i ] [ j ] = min ( distHor, distVer, distDiag ) 
             
