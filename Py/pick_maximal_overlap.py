@@ -2,12 +2,13 @@
 """
 Created on Sun Jul  9 14:18:41 2023
 
-@author: ecmos
 """
 
 from itertools import permutations
 from Py.overlap import overlap
 
+
+""""This is a helper function for the greedy_scs() function"""
 
 def pick_maximal_overlap ( reads, k ) :
     

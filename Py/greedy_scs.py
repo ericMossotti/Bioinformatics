@@ -22,9 +22,15 @@ def greedy_scs ( reads, k ) :
         
         reads . remove ( read_b )
         
+        
+        # Found the two reads in our set with the best overlap
+        # Replaced those reads with the overlap read.
+        # We keep doing until there is only one read left, our scs.
+        
         reads . append ( read_a + read_b [ olen : ] )
         
         read_a, read_b, olen = pick_maximal_overlap ( reads, k )
         
-        
+    # We concatenate the reads data without further overlaps to our scs.
+    
     return '' . join ( reads )
