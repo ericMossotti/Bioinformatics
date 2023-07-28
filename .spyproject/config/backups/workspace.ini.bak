@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['Py\\greedy_scs.py', 'Py\\scs.py', 'Py\\pick_maximal_overlap.py', 'Py\\editDistance.py', 'Py\\kmer_index.py']
+recent_files = ['Py\\greedy_scs.py', 'Py\\scs.py', 'Py\\pick_maximal_overlap.py', 'Py\\editDistance.py', 'Py\\kmer_index.py', 'Py\\de_bruijn_ize.py', 'Py\\visualize_de_bruijn.py']
 
 [main]
 version = 0.2.0
